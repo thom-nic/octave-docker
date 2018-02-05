@@ -1,0 +1,10 @@
+% vi: ft=matlab
+% See: https://wiki.octave.org/.octaverc
+% This is required for plots to work correctly with XQuarts on MacOS host:
+graphics_toolkit gnuplot;
+% save history in the mounted volume so it will be persisted:
+history_file "/source/.octave_hist";
+history_control "ignoreboth";
+EDITOR "vim";
+% more off
+% page_screen_output(0);

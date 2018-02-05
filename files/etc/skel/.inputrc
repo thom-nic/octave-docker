@@ -1,0 +1,58 @@
+
+$include  /etc/inputrc
+
+# controls several options for the bash command line interface.
+# try "man readline" for more info
+set completion-ignore-case On
+set visible-stats On
+set show-all-if-ambiguous On
+set bell-style none
+set editing-mode emacs
+
+$if Bash
+  Space: magic-space
+$endif
+
+#Existing useful key commands:
+#C-P	Previous command	(Ctrl-P)
+#C-R	Search command history
+#C-A	Beginning of line
+#C-E	End of line
+#C-U	Clear to beginning of line
+#M-B	Back one word
+#M-F	Foward one word
+#M-C	Capitalize letter under cursor & jump to next word
+#M-.	Insert last arg of last command
+#
+# !! is the previous command line
+# !:0 is the previous command name
+# !-2, !-3, are earlier commands
+# !^, !:2, !:3, !$ are the arguments
+# !* is all the arguments
+# See also:
+# http://www.chemie.fu-berlin.de/chemnet/use/info/octave/octave_34.html
+
+# forward delete does not always work in some shells... this should fix it.
+"\e[3~": delete-char
+#"\C-?": backward-delete-char
+
+"\C-v": paste-from-clipboard
+
+# From http://www.ukuug.org/events/linux2003/papers/bash_tips/
+# Incremental searching with Up and Down
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+# Old behaviour still available with Ctrl+P and Ctrl+N
+# If that prevents Left and Right from working, fix them like this:
+"\e[C": forward-char
+"\e[D": backward-char
+
+# Clear from cursor to EOL
+"\C-k": kill-line
+
+# Cycle through possible auto-completions
+"\M-a": menu-complete
+
+# Clear the entire line in one keystroke
+"\M-z": "\C-e\C-u"
+

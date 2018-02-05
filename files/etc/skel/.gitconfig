@@ -1,0 +1,53 @@
+[user]
+
+[alias]
+  a = add
+  ap = add --patch
+  b = branch
+  c = commit
+  ca = commit --amend
+  cm = commit -m
+  co = checkout
+  d = diff
+  dc = diff --cached
+  e = add --edit
+  f = fetch
+  g = grep
+  h = help
+  i = init
+  l = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  ll = log --stat
+  m = merge
+  p = pull
+  pp = pull --prune
+  r = remote
+  re = rebase
+  rei = rebase -i
+  s = status --branch --short
+  ss = show --stat
+  t = tag
+  w = whatchanged
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim -c ':normal gg'
+  pager = less -R
+
+[commit]
+#  template = ~/.gitcommit-template.txt
+
+[color]
+  ui = always
+  status = auto
+  branch = auto
+  interactive = auto
+  diff = auto
+
+[merge]
+  tool = vimdiff
+
+[push]
+  default = simple
+
+[url "ssh://git@github.com:"]
+  insteadOf = https://github.com

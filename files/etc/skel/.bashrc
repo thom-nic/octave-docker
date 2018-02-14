@@ -8,6 +8,7 @@ case $- in
       *) return;;
 esac
 
+HISTFILE=/source/.bash_history
 HISTCONTROL=ignoreboth
 HISTIGNORE="&: *:[bf]g:exit:logout"
 HISTSIZE=1000
@@ -19,13 +20,9 @@ shopt -s cdspell
 shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 shopt -s histappend
+shopt -s cmdhist
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-  # We have color support; assume it's compliant with Ecma-48
+# We have color support; assume it's compliant with Ecma-48
 [ -x /usr/bin/tput ] && /usr/bin/tput setaf 1 >&/dev/null && color_prompt=yes
 
 if [ "$color_prompt" = yes ]; then

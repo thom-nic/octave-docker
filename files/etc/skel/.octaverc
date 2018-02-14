@@ -2,6 +2,11 @@
 % See: https://wiki.octave.org/.octaverc
 % This is required for plots to work correctly with XQuarts on MacOS host:
 graphics_toolkit gnuplot;
+%setenv "GNUTERM", "qt" % or "X11"
+
+% See: https://www.gnu.org/software/octave/doc/v4.2.1/Customizing-the-Prompt.html#Customizing-the-Prompt
+PS1 ('\[\033[34m\]octave \[\033[32m\]\w\[\033[33m\]:\#\[\033[0m\]> ')
+PS2 ('\[\033[01;31m\]>> \[\033[0m\]')
 % save history in the mounted volume so it will be persisted:
 history_file "/source/.octave_hist";
 history_control "ignoreboth";
